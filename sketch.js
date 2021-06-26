@@ -1,9 +1,11 @@
-var balloon1, balloon2;
+var balloon1, balloonImage1;
 var bg;
 var database
 function preload(){
 
-balloon2 = loadAnimation("hab1.png", "hab2.png", "hab3.png", "hab4.png");
+balloonImage1 = loadImage("hab1.png");
+balloonImage2 = loadAnimation("hab1.png", "hab1.png", "hab1.png", "hab2.png", "hab2.png", "hab2.png", "hab3.png", "hab3.png", "hab3.png");
+
 bg = loadImage("Hot Air Balloon-01.png");
 
 }
