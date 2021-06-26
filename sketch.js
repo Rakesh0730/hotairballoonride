@@ -1,10 +1,10 @@
 var Balloon, balloon;
 var bg;
 var database
-function preLoad(){
+function preload(){
 
 balloon = loadAnimation("hab1.png", "hab2.png", "hab3.png", "hab4.png");
-bg = loadImage("pro-c35images/Hot Air Balloon-01.png");
+bg = loadImage("Hot Air Balloon-01.png");
 
 }
 
