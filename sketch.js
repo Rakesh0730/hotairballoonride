@@ -1,4 +1,4 @@
-var balloon1, balloonImage1;
+var balloonImage1, balloonImage1;
 var bg;
 var database
 function preload(){
