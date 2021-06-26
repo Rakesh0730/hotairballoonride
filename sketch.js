@@ -1,9 +1,9 @@
-var Balloon, balloon;
+var balloon1, balloon2;
 var bg;
 var database
 function preload(){
 
-balloon = loadAnimation("hab1.png", "hab2.png", "hab3.png", "hab4.png");
+balloon2 = loadAnimation("hab1.png", "hab2.png", "hab3.png", "hab4.png");
 bg = loadImage("Hot Air Balloon-01.png");
 
 }
@@ -15,8 +15,8 @@ function setup() {
   
   
  
-  Balloon = createSprite(250, 650, 150, 150);
-  Balloon.addAnimation("colors", balloon);
+  balloon1 = createSprite(250, 650, 150, 150);
+  balloon1.addAnimation("colors", balloon2);
 
   var balloonHeight=database.ref('balloon/height');
   balloonHeight.on("value",readHeight, showError);
@@ -30,28 +30,28 @@ function draw() {
   
   if(keyDown(LEFT_ARROW)){
     updateHeight(-10,0);
-    balloon.addAnimation("hotAirBalloon",balloonImage2);
+    balloon1.addAnimation("hotAirBalloon",hab2);
   }
   else if(keyDown(RIGHT_ARROW)){
     updateHeight(10,0);
-    balloon.addAnimation("hotAirBalloon",balloonImage2);
+    balloon1.addAnimation("hotAirBalloon",hab2);
   }
   else if(keyDown(UP_ARROW)){
     updateHeight(0,-10);
-    balloon.addAnimation("hotAirBalloon",balloonImage2);
-    balloon.scale=balloon.scale -0.005;
+    balloon1.addAnimation("hotAirBalloon",hab2);
+    balloon1.scale=balloon1.scale -0.005;
   }
   else if(keyDown(DOWN_ARROW)){
     updateHeight(0,+10);
-    balloon.addAnimation("hotAirBalloon",balloonImage2);
-    balloon.scale=balloon.scale+0.005;
+    balloon1.addAnimation("hotAirBalloon",hab2);
+    balloon1.scale=balloon1.scale+0.005;
   }
 
   drawSprites();
   fill(0);
   stroke("white");
   textSize(25);
-  text("**Use arrow keys to move Hot Air Balloon!",40,40);
+  text("**Use arrow keys to move the Hot Air Balloon!",40,40);
 }
 
 
@@ -65,8 +65,8 @@ function updateHeight(x,y){
 function readHeight(data){
   height = data.val();
   console.log(height.x);
-  balloon.x = height.x;
-  balloon.y = height.y;
+  balloon1.x = height.x;
+  balloon1.y = height.y;
 }
 
 function showError(){
